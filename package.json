@@ -1,6 +1,6 @@
 {
   "name": "node-promise-process",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Running an array of processes or functions async after each other",
   "keywords": [
     "node-promise-process"
