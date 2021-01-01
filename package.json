@@ -1,12 +1,12 @@
 {
   "name": "node-promise-process",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Running an array of processes or functions async after each other",
   "keywords": [
     "node-promise-process"
   ],
   "author": "Steve Tomlin",
-  "main": "dist/src",
+  "main": "dist/src/index.js",
   "types": "dist/src/index.d.ts",
   "license": "MIT",
   "files": [
