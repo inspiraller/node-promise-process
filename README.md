@@ -1,55 +1,53 @@
 # Prerequisites:
+
 - node
 - npm
 - yarn optional
 
 # Download this repo
+
 ```
 git clone https://github.com/inspiraller/node-promise-process.git
 ```
 
-# cd into folder 
+# cd into folder
+
 ```
 cd node-promise-process
 ```
 
-# install dependencies 
+# install dependencies
+
 ```
 yarn install
 ```
-or 
-```
-npm install 
-```
 
-# run example via npm script and using typescript
+or
+
 ```
-yarn run example-process
+npm install
 ```
 
-# See example script below
-**src/example-process.ts**
-```typescript
-import sync from "./src/lib/sync";
-import { IObjCMD } from "./src/types";
+# Create your example
 
-const hello = () => {
-  console.log("hello world!");
-  return "hello - success"; // need to return something... handleFunc is expecting a string result.
-};
-
+**myprocess.js**
+```javascript
+const sync = require('node-promise-process');
 const init = async () => {
-  const arrNext: IObjCMD[] = [{
-    func: hello
-  }, {
-    func: hello
-  }, {
-    cmd: 'mkdir steve'
-  }];
-  await sync(arrNext);
+  await sync([
+    {
+      func: () => 'hello world',
+      cmd: 'mkdir steve'
+    }
+  ]);
 };
-
 init();
 ```
 
-# Create your own script
+# run
+
+```
+node myprocess.js
+```
+
+Done !
