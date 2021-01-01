@@ -11,6 +11,9 @@
   "files": [
     "dist/**/*"
   ],
+  "repository": {
+    "url": "https://github.com/inspiraller/node-promise-process.git"
+  },
   "scripts": {
     "example-process": "cross-env-shell babel-node --extensions '.ts,.tsx' src/example-process.ts",
     "myprocess": "node myprocess.js",

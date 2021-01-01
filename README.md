@@ -5,7 +5,7 @@
 
 # Download this repo
 ```
-git clone ..node-promise-process
+git clone https://github.com/inspiraller/node-promise-process.git
 ```
 
 # cd into folder 
