@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "allowJs": false,
+    "strict": true,
+    "target": "es6",
+    "module": "commonjs",
+    "lib": ["dom", "es6", "es5", "es2017", "esnext.asynciterable"],
+    "sourceMap": true,
+    "moduleResolution": "node",
+    "removeComments": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "esModuleInterop": true, /* Needed for .graphql imports - Enables emit interoperability between CommonJS and ES Modules via creation of namespace objects for all imports. Implies 'allowSyntheticDefaultImports'. */
+    "noUnusedParameters": false, // Todo: after update to eslint. This is to allow  _ in mutation...eg:  addPlayer: async (_, args) =>, as its the first variable. eslint can have granular check to allow _
+    "paths": {
+      "src/*": ["./src/*","./src/node_modules/@types/*"]
+    },
+    "declaration": true,
+    "rootDir": "./src",
+    "outDir": "dist"
+  },
+  "exclude": ["dist", "__tests__", "jest.config.js", "src/index.js"],
+  "include": [ "src/*"]
+}

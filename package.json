@@ -1,0 +1,56 @@
+{
+  "name": "node-promise-process",
+  "version": "1.0.0",
+  "description": "Running an array of processes or functions async after each other",
+  "keywords": [
+    "node-promise-process"
+  ],
+  "author": "Steve Tomlin",
+  "main": "src/index/.ts",
+  "license": "MIT",
+  "files": [
+    "dist/**/*"
+  ],
+  "scripts": {
+    "example-process": "cross-env-shell babel-node --extensions '.ts,.tsx' src/example-process.ts",
+    "myprocess": "node myprocess.js",
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.10.5",
+    "@babel/core": "^7.11.1",
+    "@babel/node": "^7.10.5",
+    "@babel/plugin-proposal-class-properties": "^7.12.1",
+    "@babel/plugin-proposal-object-rest-spread": "^7.12.1",
+    "@babel/plugin-transform-runtime": "^7.12.10",
+    "@babel/plugin-transform-typescript": "^7.12.1",
+    "@babel/preset-env": "^7.12.10",
+    "@babel/preset-typescript": "^7.12.7",
+    "@babel/register": "^7.10.5",
+    "@babel/runtime": "^7.11.2",
+    "@types/node": "^14.0.27",
+    "@typescript-eslint/eslint-plugin": "^3.9.0",
+    "@typescript-eslint/parser": "^3.9.0",
+    "chalk": "^4.1.0"
+  },
+  "dependencies": {
+    "babel-eslint": "^10.1.0",
+    "babel-jest": "^26.3.0",
+    "babel-loader": "^8.1.0",
+    "babel-plugin-module-resolver": "^4.0.0",
+    "babel-plugin-transform-redom-jsx": "^3.0.1",
+    "cross-env": "^7.0.2",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-airbnb-typescript": "^9.0.0",
+    "eslint-config-prettier": "^6.9.0",
+    "eslint-import-resolver-babel-module": "^5.1.2",
+    "eslint-loader": "^4.0.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jest": "^23.18.2",
+    "eslint-plugin-prettier": "^3.1.2",
+    "nodemon": "^1.18.4",
+    "prettier": "^1.19.1",
+    "typescript": "^4.1.3"
+  }
+}
