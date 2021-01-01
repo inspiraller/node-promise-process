@@ -1,18 +1,7 @@
-import {
-  TResolveFunc,
-  TRejectFunc,
-  TExecOut
-} from "../types";
+import { TResolveFunc, TRejectFunc, TExecOut } from '../types';
 
-export type THandleExecOut = (
-  resolve: TResolveFunc,
-  reject: TRejectFunc
-) => TExecOut;
-export const handleExecOut: THandleExecOut = (resolve, reject) => (
-  error,
-  stdout,
-  stderr
-) => {
+export type THandleExecOut = (resolve: TResolveFunc, reject: TRejectFunc) => TExecOut;
+export const handleExecOut: THandleExecOut = (resolve, reject) => (error, stdout, stderr) => {
   if (error) {
     reject(error);
   } else {

@@ -31,7 +31,7 @@ module.exports = {
       }
     ]
   ],
-  coveragePathIgnorePatterns: ['node_modules', 'print.ts', 'dist'],
+  coveragePathIgnorePatterns: ['node_modules', 'print.ts', 'dist', 'example-process.ts'],
   collectCoverageFrom: ['src/*.{t,j}s', 'src/**/*.{t,j}s'],
   coverageThreshold: {
     global: {
