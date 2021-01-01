@@ -6,7 +6,11 @@ import { TPromiseResponse, IObjCMD, IObjCMDFunc } from '../types';
 import handleExecOut from './handleExecOut';
 import handleFunc from './handleFunc';
 
-export type TProcess = (objCMD: IObjCMD, intNextCursor: number, opt?: ExecOptions) => TPromiseResponse;
+export type TProcess = (
+  objCMD: IObjCMD,
+  intNextCursor: number,
+  opt?: ExecOptions
+) => TPromiseResponse;
 const customProcess: TProcess = (objCMD, intNextCursor, opt = {}) =>
   new Promise((resolve, reject) => {
     if (objCMD.func) {

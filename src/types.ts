@@ -1,7 +1,7 @@
 import { ExecException } from 'child_process';
 
 export type TError = ExecException | null;
-export type TSTDOut = string | Buffer;
+export type TSTDOut = string; // | Buffer;
 export type TSuccess = TSTDOut;
 export type TSuccessOrError = TSuccess | TError;
 export type TPromiseResponse = Promise<TSuccess>;
