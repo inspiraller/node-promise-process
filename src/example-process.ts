@@ -1,4 +1,4 @@
-import sync from './lib/sync';
+import sync from 'node-promise-process';
 import { IObjCMD } from './types';
 
 const hello = () => {

@@ -32,15 +32,17 @@ npm install
 
 **myprocess.js**
 ```javascript
-const sync = require('node-promise-process');
+const sync = require('node-promise-process').default;
+
+console.log('typeof sync = ', typeof sync, sync);
 const init = async () => {
-  await sync([
-    {
-      func: () => 'hello world',
-      cmd: 'mkdir steve'
-    }
-  ]);
+  await sync([{
+    func: () => 'hello world',
+  }, {
+    cmd: 'mkdir steve'
+  }]);
 };
+
 init();
 ```
 
