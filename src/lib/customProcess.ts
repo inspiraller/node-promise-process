@@ -1,24 +1,25 @@
 import { exec, ExecOptions } from 'child_process';
 
 import print from './print';
-import { TPromiseResponse, IObjCMD, IObjCMDFunc } from '../types';
+import { TPromiseResponse, TFunc, TcmdOrFunc } from '../types';
 
 import handleExecOut from './handleExecOut';
 import handleFunc from './handleFunc';
 
 export type TProcess = (
-  objCMD: IObjCMD,
+  cmdOrFunc: TcmdOrFunc,
   intNextCursor: number,
   opt?: ExecOptions
 ) => TPromiseResponse;
-const customProcess: TProcess = (objCMD, intNextCursor, opt = {}) =>
+const customProcess: TProcess = (cmdOrFunc, intNextCursor, opt = {}) =>
   new Promise((resolve, reject) => {
-    if (objCMD.func) {
-      print(`${intNextCursor}. ${objCMD.func.name}()`, { color: 'cyan', style: 'bold' });
-      handleFunc(objCMD as IObjCMDFunc, resolve, reject);
+
+    const strFuncOrCmd = cmdOrFunc === 'string' ? cmdOrFunc : `${(cmdOrFunc as TFunc).name}()`;
+    print(`${intNextCursor}. ${strFuncOrCmd}`, { color: 'cyan', style: 'bold' });
+    if (typeof cmdOrFunc === 'string') {
+      exec(cmdOrFunc as string, opt, handleExecOut(resolve, reject));
     } else {
-      print(`${intNextCursor}. ${objCMD.cmd}`, { color: 'cyan', style: 'bold' });
-      exec(objCMD.cmd as string, opt, handleExecOut(resolve, reject));
+      handleFunc(cmdOrFunc as TFunc, resolve, reject);
     }
   });
 

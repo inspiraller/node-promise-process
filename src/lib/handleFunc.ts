@@ -1,11 +1,11 @@
 import {
-  IObjCMDFunc,
   TPromiseResponse,
   TResolveFunc,
   TRejectFunc,
   TSuccessOrError,
   TSuccess,
-  TError
+  TError,
+  TFunc
 } from '../types';
 
 export type THandleFuncResult = (
@@ -36,9 +36,10 @@ export const handleFuncAsPromise: THandleFuncAsPromise = (response, resolve, rej
     });
 };
 
-export type THandleFunc = (objCMD: IObjCMDFunc, resolve: TResolveFunc, reject: TRejectFunc) => void;
-const handleFunc: THandleFunc = (objCMD, resolve, reject) => {
-  const response: TSuccessOrError | TPromiseResponse = objCMD.func();
+export type THandleFunc = (func: TFunc, resolve: TResolveFunc, reject: TRejectFunc) => void;
+const handleFunc: THandleFunc = (func, resolve, reject) => {
+  console.log('func = ', func, typeof func);
+  const response: TSuccessOrError | TPromiseResponse = func();
   if (response instanceof Promise) {
     handleFuncAsPromise(response, resolve, reject);
   } else {

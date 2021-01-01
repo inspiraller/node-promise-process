@@ -21,3 +21,5 @@ export interface IObjCMD {
   cmd?: IObjCMDExec['cmd'];
   func?: IObjCMDFunc['func'];
 }
+
+export type TcmdOrFunc = string | TFunc;

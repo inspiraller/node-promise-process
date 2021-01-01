@@ -1,11 +1,12 @@
-import { IObjCMD } from '../types';
+import { TcmdOrFunc } from '../types';
 import customProcess from './customProcess';
 
-type TGetNext = (arrNext: IObjCMD[], intNextCursor: number) => boolean;
+type TGetNext = (arrNext: TcmdOrFunc[], intNextCursor: number) => boolean;
 const getNext: TGetNext = (arrNext, intNextCursor) => intNextCursor < arrNext.length;
 
+
 interface ISync {
-  arrNext: IObjCMD[];
+  arrNext: TcmdOrFunc[];
 }
 
 interface ISyncTry extends ISync {

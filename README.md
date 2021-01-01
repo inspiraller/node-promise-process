@@ -34,13 +34,13 @@ npm install
 ```javascript
 const sync = require('node-promise-process').default;
 
-console.log('typeof sync = ', typeof sync, sync);
+const helloworld = () => 'hello world';
+
 const init = async () => {
-  await sync([{
-    func: () => 'hello world',
-  }, {
-    cmd: 'mkdir steve'
-  }]);
+  await sync([
+    helloworld,
+    'mkdir steve'
+  ]);
 };
 
 init();
@@ -63,28 +63,22 @@ node myprocess.js
 ```
 **example-process.ts**
 ```typescript
-import sync, {IObjCMD} from 'node-promise-process';
+import sync, {TcmdOrFunc} from 'node-promise-process';
 
-const hello = () => {
+const hello1 = () => {
   console.log('hello world!');
   return 'hello - success'; // need to return something... handleFunc is expecting a string result.
 };
+const hello2 = hello1;
 
 const init = async () => {
-  const arrNext: IObjCMD[] = [
-    {
-      func: hello
-    },
-    {
-      func: hello
-    },
-    {
-      cmd: 'mkdir steve'
-    }
+  const arrNext: TcmdOrFunc[] = [
+    hello1,
+    hello2,
+    'mkdir steve'
   ];
   await sync(arrNext);
 };
-
 init();
 ```
 
